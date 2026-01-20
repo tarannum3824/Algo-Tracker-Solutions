@@ -1,13 +1,16 @@
-def isPalindrome(number):
-    strnum=str(number)
-    reverse=""
-    length=len(strnum)
-    for i in range(length-1,-1,-1):
-        reverse +=strnum[i]  
-    if strnum==reverse:
-        return True
-    else:
-        return False
-    
-print(isPalindrome(123456789)) 
-print(isPalindrome(12321))
+class palindrome:
+    def checkPalindrom(self, string:str)->bool:
+        cleanString=[]
+        for character in string:
+            if character.isalnum():
+                lowercharacter=character.lower()
+                cleanString.append(lowercharacter)
+        return cleanString==cleanString[::-1]
+           
+obj1=palindrome()
+check=obj1.checkPalindrom("My name is Sanu!")
+print(check)
+
+obj2=palindrome()
+check=obj2.checkPalindrom("A man, a plan, a canal: Panama")
+print(check)
